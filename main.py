@@ -4,9 +4,10 @@
 def longest_common_subsequence(X, Y):
     A, B = len(X), len(Y)
     
-    # Create a pt table to store lengths of LCS
-    pt = [[0] * (B + 1) for _ in range(A + 1)]
-    
+    # Create a pt table with initialization to store lengths of LCS
+   #pt = [[0] * (B + 1) for _ in range(A + 1)]
+    pt = [[0 for _ in range(B + 1)] for _ in range(A+1)]
+       
     # Build the dp table
     for i in range(1, A + 1):
         for j in range(1, B + 1):
@@ -37,8 +38,8 @@ def longest_common_subsequence(X, Y):
     return lcs_length, ''.join(lcs)
 
 # ExaAple usage:
-X = "ABCBDAB"
-Y = "BDCAB"
+X = "asbe"
+Y = "bes"
 lcs_length, lcs = longest_common_subsequence(X, Y)
 print(f"Length of LCS: {lcs_length}")
 print(f"LCS: {lcs}")
